@@ -1,0 +1,52 @@
+{
+  "name": "@ali/webpack-mock-plugin",
+  "version": "0.1.0",
+  "description": "适配ice本地mock方案的webpack mock插件",
+  "devDependencies": {
+    "@alifd/next": "^1.26.11",
+    "@alife/theme-sellerpc": "^0.7.10",
+    "@ice/runtime": "^1.0.0",
+    "@monaco-editor/react": "^4.4.6",
+    "classnames": "^2.3.2",
+    "json-format": "^1.0.1",
+    "mockjs": "^1.1.0",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@ali/bp-materials": "^1.0.8-beta.9",
+    "@ali/bp-utils": "^1.0.0-beta.1",
+    "@ice/app": "^3.0.0",
+    "@types/node": "^18.11.17",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "chalk": "^5.2.0",
+    "cross-spawn": "^7.0.3",
+    "f2elint": "^2.2.1",
+    "open": "^8.4.0",
+    "opener": "^1.5.2",
+    "sirv": "^2.0.2",
+    "url": "^0.11.0",
+    "ws": "^8.11.0"
+  },
+  "scripts": {
+    "start": "ice start",
+    "build": "ice build",
+    "f2elint-scan": "f2elint scan",
+    "f2elint-fix": "f2elint fix"
+  },
+  "main": "./plugin/index.js",
+  "files": [
+    "build",
+    "plugin"
+  ],
+  "originTemplate": "@ice/lite-scaffold",
+  "husky": {
+    "hooks": {
+      "pre-commit": "f2elint commit-file-scan",
+      "commit-msg": "f2elint commit-msg-scan"
+    }
+  },
+  "repository": "https://github.com/water-bai/ice-mock-viewer.git"
+}

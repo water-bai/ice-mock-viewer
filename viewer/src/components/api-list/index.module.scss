@@ -1,0 +1,72 @@
+.appList {
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+}
+
+.appList>.content {
+  flex: 1;
+  overflow: scroll;
+  margin: var(--s-6, 18px) calc(-1 * var(--s-4, 12px));
+
+  :global {
+    .next-list-item {
+      cursor: pointer;
+      padding: var(--s-4, 12px);
+      // margin-bottom: var(--s-4,12px);
+
+      .next-list-item-extra {
+        opacity: 0.2;
+        justify-content: center;
+      }
+
+      &:hover,
+      &.active {
+        background-color: var(--color-brand1-1, rgba(61, 127, 255, 0.06));
+
+        // border: 1px solid var(--color-brand1-6,#3d7fff);
+        .next-list-item-extra {
+          opacity: 1;
+        }
+      }
+
+      label {
+        margin-top: var(--s-3, 9px);
+      }
+    }
+
+    .next-collapse-panel-title {
+      background-color: var(--color-fill1-1, #f0f2f5);
+      position: sticky;
+      top: 0;
+    }
+  }
+
+  .groupTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: var(--s-6, 18px);
+
+    &>:last-child {
+      opacity: 0.2;
+    }
+
+    &:hover {
+      &>:last-child {
+        opacity: 1;
+      }
+    }
+  }
+
+  .apiExtra {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .apiActionBar {
+      margin-top: var(--s-2, 6px);
+    }
+  }
+}

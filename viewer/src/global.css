@@ -1,0 +1,22 @@
+@import '@alifd/next/dist/next.var.css';
+@import '@alife/theme-sellerpc/variables.css';
+
+:root {
+  --primary: #3178f6;
+  --bg-primary: white;
+}
+
+body {
+  margin: 0;
+}
+
+.next-list-item-content{
+  overflow: hidden;
+
+}
+.next-list-item-title{
+  max-width: 100%;
+}
+.bp-ellipsis-text{
+  max-width: 100%;
+}

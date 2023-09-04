@@ -1,0 +1,80 @@
+{
+  "name": "ice-mock-viewer",
+  "version": "1.0.0",
+  "description": "本地mock数据管理webpack插件",
+  "files": [
+    "cjs",
+    "es2017",
+    "public"
+  ],
+  "type": "module",
+  "module": "es2017/index.js",
+  "types": "es2017/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es2017/index.js"
+    },
+    "./*": "./*"
+  },
+  "sideEffects": [
+    "dist/*",
+    "*.scss",
+    "*.less",
+    "*.css"
+  ],
+  "scripts": {
+    "start": "ice-pkg start",
+    "build": "npm run build:service  && npm run build:viewer",
+    "build:viewer": "node ./scripts/build.mjs",
+    "build:service": "ice-pkg build",
+    "start:viewer": "cd ./viewer && npm run start",
+    "start:service": "ts-node-esm ./scripts/test.ts",
+    "prepublishOnly": "npm run build",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "eslint:fix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "lint": "npm run eslint && npm run stylelint"
+  },
+  "keywords": [
+    "ice",
+    "js",
+    "webpack",
+    "mock"
+  ],
+  "devDependencies": {
+    "@ice/pkg": "^1.4.1",
+    "@iceworks/spec": "^1.0.0",
+    "@types/glob": "^8.0.1",
+    "@types/micromatch": "^4.0.2",
+    "@types/ws": "^8.5.4",
+    "eslint": "^7.0.0",
+    "stylelint": "^13.7.2"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@swc/helpers": "^0.4.14",
+    "chalk": "^5.2.0",
+    "chokidar": "^3.5.3",
+    "cross-spawn": "^7.0.3",
+    "esbuild-register": "^3.4.2",
+    "glob": "^8.1.0",
+    "http": "^0.0.1-security",
+    "lodash.debounce": "^4.0.8",
+    "micromatch": "^4.0.5",
+    "mockjs": "^1.1.0",
+    "open": "^8.4.0",
+    "path-to-regexp": "^6.2.1",
+    "sirv": "^2.0.2",
+    "uid": "^2.0.1",
+    "url": "^0.11.0",
+    "webpack-dev-server": "^4.11.1",
+    "ws": "^8.12.0"
+  },
+  "peerDependencies": {
+    "webpack": "^5.75.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": "https://github.com/water-bai/ice-mock-viewer.git"
+}
